@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class HoleBallCollision : MonoBehaviour
 {
+    public GameObject ballPrefab;
+
+    public GameObject startPosition;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ball"))
@@ -13,17 +17,18 @@ public class HoleBallCollision : MonoBehaviour
             Rigidbody ballRb = other.GetComponent<Rigidbody>();
             if (ballRb != null)
             {
-                // Stop ball movement
+
                 ballRb.velocity = Vector3.zero;
                 ballRb.isKinematic = true;
 
-                // Position ball slightly below the hole
                 Vector3 holePosition = transform.position;
                 other.transform.position = new Vector3(holePosition.x, holePosition.y - 0.2f, holePosition.z);
-            }
-            else
-            {
-                Debug.LogError("No Rigidbody found on the ball!");
+
+                if (startPosition != null)
+                {
+                    
+                    Instantiate(ballPrefab, startPosition.transform.position, Quaternion.identity);
+                }
             }
         }
     }

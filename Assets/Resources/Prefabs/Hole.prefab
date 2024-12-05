@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3348679221424766736}
   - component: {fileID: 3348679221424766737}
   - component: {fileID: 8501404125488790766}
-  - component: {fileID: -1893670422215075822}
   m_Layer: 3
   m_Name: Hole
   m_TagString: Hole
@@ -111,15 +110,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e0f00235e014142a45ffeab0940d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-1893670422215075822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3348679221424766742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 470961f99f87d344a8afdd7aa702f9e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  ballPrefab: {fileID: 4528644694921809638, guid: fa2aaa1da2b7c7046ac0b5ead487b64c, type: 3}
