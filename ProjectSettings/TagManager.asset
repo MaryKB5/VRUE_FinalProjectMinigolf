@@ -5,14 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
+  - Hole
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Hole
   - Water
   - UI
-  - 
+  - Ball
   - 
   - 
   - 
