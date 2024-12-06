@@ -96,8 +96,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1662139
-  m_Center: {x: -0.027263561, y: 0, z: 0.026611486}
+  m_Radius: 0.27969334
+  m_Center: {x: -0.054641813, y: 0, z: 0.010327399}
 --- !u!114 &8501404125488790766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,3 +111,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 4528644694921809638, guid: fa2aaa1da2b7c7046ac0b5ead487b64c, type: 3}
+  startPosition: {fileID: 0}
