@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 6972284304725549346}
   - component: {fileID: 255562801}
   - component: {fileID: 255562800}
+  - component: {fileID: 8235773157363923820}
   m_Layer: 0
   m_Name: Golf Club
   m_TagString: Untagged
@@ -410,3 +411,15 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &8235773157363923820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8917826355607699703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab7c7ea806a4cda40ac5971cb9332b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

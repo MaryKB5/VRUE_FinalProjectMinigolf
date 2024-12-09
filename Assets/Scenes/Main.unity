@@ -10652,6 +10652,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -3.111
       objectReference: {fileID: 0}
+    - target: {fileID: 8235773157363923820, guid: 0c6aa405195e2644e89fa0e3a122a186, type: 3}
+      propertyPath: leftController
+      value: 
+      objectReference: {fileID: 1731025117}
+    - target: {fileID: 8235773157363923820, guid: 0c6aa405195e2644e89fa0e3a122a186, type: 3}
+      propertyPath: rightController
+      value: 
+      objectReference: {fileID: 1317145695}
     - target: {fileID: 8917826355607699703, guid: 0c6aa405195e2644e89fa0e3a122a186, type: 3}
       propertyPath: m_Name
       value: Golf Club
@@ -13573,7 +13581,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Large Golf Club Statue
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 255562800, guid: 0c6aa405195e2644e89fa0e3a122a186, type: 3}
+    - {fileID: 8235773157363923820, guid: 0c6aa405195e2644e89fa0e3a122a186, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0c6aa405195e2644e89fa0e3a122a186, type: 3}
 --- !u!1 &1993140224
 GameObject:
