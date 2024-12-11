@@ -45,7 +45,8 @@ public class SpawnEmoji : MonoBehaviourPun
 
     private void Spawn()
     {
-        spawnedEmoji = Instantiate(emojiPrefab, rightController.transform.position + emojiOffset, emojiPrefab.transform.rotation);
+         Quaternion emojiRotation = rightController.transform.rotation * Quaternion.Euler(-60, 0, 0);
+        spawnedEmoji = Instantiate(emojiPrefab, rightController.transform.position + emojiOffset, emojiRotation);
 
         spawnedEmoji.transform.SetParent(rightController.transform);
 
@@ -57,7 +58,8 @@ public class SpawnEmoji : MonoBehaviourPun
     {
         if (spawnedEmoji == null)
         {
-            spawnedEmoji = Instantiate(emojiPrefab, spawnPosition, emojiPrefab.transform.rotation);
+            Quaternion emojiRotation = rightController.transform.rotation * Quaternion.Euler(-60, 0, 0);
+            spawnedEmoji = Instantiate(emojiPrefab, spawnPosition, emojiRotation);
             spawnedEmoji.transform.SetParent(rightController.transform);
             emojiSpawnTime = Time.time;
         }
