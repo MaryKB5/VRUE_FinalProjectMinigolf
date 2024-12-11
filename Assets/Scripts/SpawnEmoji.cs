@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.XR;
-using UnityEngine.XR.Interaction.Toolkit;
+using Photon.Pun;
 
-public class SpawnEmoji : MonoBehaviour
+public class SpawnEmoji : MonoBehaviourPun
 {
     public GameObject emojiPrefab; 
     public GameObject rightController; 
@@ -19,12 +19,15 @@ public class SpawnEmoji : MonoBehaviour
             if (spawnedEmoji == null)
             {
                 Spawn();
+
+                photonView.RPC("SyncEmojiSpawn", RpcTarget.Others, rightController.transform.position + emojiOffset);
             }
         }
 
         if (spawnedEmoji != null && Time.time - emojiSpawnTime > 2f)
         {
             Destroy(spawnedEmoji);
+            photonView.RPC("SyncEmojiDespawn", RpcTarget.Others);
         }
     }
 
@@ -47,5 +50,25 @@ public class SpawnEmoji : MonoBehaviour
         spawnedEmoji.transform.SetParent(rightController.transform);
 
         emojiSpawnTime = Time.time;
+    }
+
+    [PunRPC]
+    private void SyncEmojiSpawn(Vector3 spawnPosition)
+    {
+        if (spawnedEmoji == null)
+        {
+            spawnedEmoji = Instantiate(emojiPrefab, spawnPosition, emojiPrefab.transform.rotation);
+            spawnedEmoji.transform.SetParent(rightController.transform);
+            emojiSpawnTime = Time.time;
+        }
+    }
+
+    [PunRPC]
+    private void SyncEmojiDespawn()
+    {
+        if (spawnedEmoji != null)
+        {
+            Destroy(spawnedEmoji);
+        }
     }
 }
