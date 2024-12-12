@@ -9,6 +9,8 @@ public class BallCollision : MonoBehaviour
     public float hapticIntensity = 0.01f;
     public float hapticDuration = 0.01f;
 
+    public ScoreManager scoreManager;
+
     private void OnCollisionEnter(Collision collision)
     {
 
@@ -29,6 +31,17 @@ public class BallCollision : MonoBehaviour
             {
                 audioSource.Play();
             }
+
+
+            if (gameObject.name == "Golf Club Player 1")
+            {
+                scoreManager.IncreaseAttemptsPlayerOne();
+            }
+            else if (gameObject.name == "Golf Club Player 2")
+            {
+                scoreManager.IncreaseAttemptsPlayerTwo();
+            }
+            
         }
     }
 }
