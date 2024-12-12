@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class BallCollisionHapticFeedback : MonoBehaviour
+public class BallCollision : MonoBehaviour
 {
     public XRBaseController leftController;
     public XRBaseController rightController;
@@ -22,6 +22,12 @@ public class BallCollisionHapticFeedback : MonoBehaviour
             if (rightController != null)
             {
                 rightController.SendHapticImpulse(hapticIntensity, hapticDuration);
+            }
+
+            AudioSource audioSource = GetComponent<AudioSource>();
+            if (audioSource != null && !audioSource.isPlaying)
+            {
+                audioSource.Play();
             }
         }
     }

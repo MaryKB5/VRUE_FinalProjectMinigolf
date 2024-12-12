@@ -24,6 +24,13 @@ public class HoleBallCollision : MonoBehaviour
                 Vector3 holePosition = transform.position;
                 other.transform.position = new Vector3(holePosition.x, holePosition.y - 0.2f, holePosition.z);
 
+                AudioSource audioSource = GetComponent<AudioSource>();
+                if (audioSource != null && !audioSource.isPlaying)
+                {
+                    Debug.Log("audio plays");
+                    audioSource.Play();
+                }
+
                 if (startPosition != null)
                 {
                     
