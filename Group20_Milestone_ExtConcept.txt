@@ -1,0 +1,23 @@
+VRUE Final Project Extended Concept, Group 20 Multiplayer Mini-Golf Project
+Title: Collaborative Multiplayer VR Mini-Golf Experience
+
+ Project team # 20: Michael Auß (00525937), Maria Beißinger (12432812)
+
+08.12.2024
+ 
+Extended Concept:
+
+We are creating an immersive and competitive multiplayer VR mini-golf experience where two players can face off on uniquely challenging courses. The goal is to complete each hole with the fewest strokes while navigating creative obstacles. To enhance the experience, additional users can join as observers, freely exploring the environment and watching the match unfold.
+The game mechanics emphasize realism and interactivity: players can swing their putters to hit the ball across complex course objects. Up to five strokes are allowed per hole, and penalties are applied if the ball leaves the course or gets stuck.
+
+We have implemented four distinct mini-golf courses, each designed with unique challenges and environments. Players can teleport between these courses, allowing for seamless exploration and gameplay. The courses are set outdoors in a scenic, hilly landscape under an open sky, with decorative plants adding to the ambiance.
+Although the original plan included push-to-talk voice chat, we have decided to replace it with an emoji-based chat system. This feature will allow players to communicate visually.
+We have also added dynamic ball management: when a ball falls into a hole, a new ball spawns at the start of the course for the next player. To make the experience more immersive, we plan to add sound effects for important moments, like the "plunk" sound when a ball falls into a hole. Haptic feedback will also give players a physical response during certain actions.
+
+Features
+1. Interaction: Complex interaction (two-handed) (1)
+2. Effects: Complex physics interaction or simulation (similar to assignment #2) (1)
+3. Communication: Emoji Chat (1-2)
+4. Teleportation (0.5)
+5. Haptics (0.5)
+6. Sound effects (0.5)
