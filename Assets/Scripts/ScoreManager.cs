@@ -28,7 +28,11 @@ public class ScoreManager : MonoBehaviour
     public void SaveAttemptsToListPlayerOne()
     {
         attemptsPlayerOneList[currentHole] = attemptsPlayerOne;
-        Debug.Log("attempts player 1: " + attemptsPlayerOneList[0]);
+        Debug.Log("Final Attempts Player 1:");
+        for (int i = 0; i < attemptsPlayerOneList.Count; i++)
+        {
+            Debug.Log("Hole " + i + ": " + attemptsPlayerOneList[i]);
+        }
     }
 
     public void SaveAttemptsToListPlayerTwo()
@@ -41,5 +45,15 @@ public class ScoreManager : MonoBehaviour
     {
         currentHole++;
         Debug.Log("currentHole: " + currentHole);
+    }
+
+    public void ResetAttemptsPlayerOne()
+    {
+        attemptsPlayerOne = 0;
+    }
+
+    public void ResetAttemptsPlayerTwo()
+    {
+        attemptsPlayerTwo = 0;
     }
 }
