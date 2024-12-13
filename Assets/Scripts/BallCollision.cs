@@ -33,15 +33,16 @@ public class BallCollision : MonoBehaviour
             }
 
 
-            if (gameObject.name == "Golf Club Player 1")
+            if (CompareTag("Player1GolfClub"))
             {
                 scoreManager.IncreaseAttemptsPlayerOne();
             }
-            else if (gameObject.name == "Golf Club Player 2")
+            else if (CompareTag("Player2GolfClub"))
             {
                 scoreManager.IncreaseAttemptsPlayerTwo();
             }
-            
+
+
         }
     }
 }
