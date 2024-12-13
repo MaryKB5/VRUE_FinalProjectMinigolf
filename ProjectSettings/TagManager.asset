@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ball
   - Hole
+  - Player1GolfClub
+  - Player2GolfClub
   layers:
   - Default
   - TransparentFX

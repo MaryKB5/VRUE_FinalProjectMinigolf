@@ -42,12 +42,14 @@ public class HoleBallCollision : MonoBehaviour
                 {
                     scoreManager.SaveAttemptsToListPlayerTwo();
                     scoreManager.NextHole();
+                    scoreManager.ResetAttemptsPlayerTwo();
                     firstBallInHole = false;
                 }
                 else
                 {
                     firstBallInHole = true;
                     scoreManager.SaveAttemptsToListPlayerOne();
+                    scoreManager.ResetAttemptsPlayerOne();
                 }
             }
         }
