@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
+    public UIManager uiManager;
     private int attemptsPlayerOne = 0;
-
     private int attemptsPlayerTwo = 0;
 
-    public List<int> attemptsPlayerOneList = new List<int>(new int[4]); 
-    public List<int> attemptsPlayerTwoList = new List<int>(new int[4]);
+    public List<int> attemptsPlayerOneList = new List<int> { 0, 0, 0, 0 };
+    public List<int> attemptsPlayerTwoList = new List<int> { 0, 0, 0, 0 };
 
     private int currentHole = 0;
 
@@ -33,12 +33,15 @@ public class ScoreManager : MonoBehaviour
         {
             Debug.Log("Hole " + i + ": " + attemptsPlayerOneList[i]);
         }
+        uiManager.UpdateUI();
     }
 
     public void SaveAttemptsToListPlayerTwo()
     {
         attemptsPlayerTwoList[currentHole] = attemptsPlayerTwo;
         Debug.Log("attempts player 2: " + attemptsPlayerTwoList);
+
+        uiManager.UpdateUI();
     }
 
     public void NextHole()
