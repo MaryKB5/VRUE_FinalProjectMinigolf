@@ -20,6 +20,8 @@ namespace Photon.Pun.Demo.Cockpit
 
         bool registered;
 
+        
+
         // Use this for initialization
         void OnEnable()
         {
@@ -40,6 +42,10 @@ namespace Photon.Pun.Demo.Cockpit
                 registered = false;
                 _toggle.onValueChanged.RemoveListener(ToggleValue);
             }
+        }
+
+        void Start() {
+            PhotonNetwork.AutomaticallySyncScene = true;
         }
 
         void Update()
