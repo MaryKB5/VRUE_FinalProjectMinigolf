@@ -47,9 +47,9 @@ public class HoleBallCollision : MonoBehaviour
                 }
                 else
                 {
-                    firstBallInHole = true;
                     scoreManager.SaveAttemptsToListPlayerOne();
                     scoreManager.ResetAttemptsPlayerOne();
+                    firstBallInHole = true;
                 }
             }
         }
