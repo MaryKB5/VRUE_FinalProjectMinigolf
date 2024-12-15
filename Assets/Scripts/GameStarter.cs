@@ -12,9 +12,12 @@ public class GameStarter : MonoBehaviour
 
     public GameObject canvas;
 
+    public GameObject lobbyPlane;
+
     // Start is called before the first frame update
     public void OnGameStart()
     {
+        Debug.Log("OnGameStart");
         GameObject gameEnvironment = GameObject.Find("Game Environment");
         
 
@@ -37,7 +40,7 @@ public class GameStarter : MonoBehaviour
         GameObject.Destroy(originalXRInteractionSetup);
         Debug.Log(canvas);
         GameObject.Destroy(canvas);
-
+        GameObject.Destroy(lobbyPlane);
         
     }
 

@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviourPun
         {
             if (i < scoreManager.attemptsPlayerOneList.Count)
             {
-                Debug.Log("upadting UI");
+               // Debug.Log("upadting UI");
                 player1Texts[i].text = scoreManager.attemptsPlayerOneList[i].ToString();
             }
             

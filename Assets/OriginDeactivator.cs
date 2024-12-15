@@ -22,7 +22,7 @@ public class OriginDeactivator : MonoBehaviourPun
             //Destroy(mainCamera.GetComponent<AudioListener>());
             //Destroy(mainCamera.GetComponent<TrackedPoseDriver>());
 
-                   
+                   /*
             Transform leftController = transform.Find("Left Controller");
             Debug.Log("LeftController " + leftController);
             destroyInteractors(leftController);
@@ -30,7 +30,7 @@ public class OriginDeactivator : MonoBehaviourPun
             Transform rightController = transform.Find("Right Controller");
             Debug.Log("RightController " + rightController);
 
-            destroyInteractors(rightController);
+            destroyInteractors(rightController);*/
         }
     }
 

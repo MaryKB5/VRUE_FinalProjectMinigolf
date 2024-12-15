@@ -7,9 +7,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 558304766237493759, guid: eddc3dc5308dc584cb07f2785a6be24b, type: 3}
+      propertyPath: m_StartingGroupMembers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 558304766237493759, guid: eddc3dc5308dc584cb07f2785a6be24b, type: 3}
+      propertyPath: m_StartingGroupMembers.Array.data[3]
+      value: 
+      objectReference: {fileID: 4088171026558049337}
+    - target: {fileID: 1592423358255309896, guid: eddc3dc5308dc584cb07f2785a6be24b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2823061850494145999, guid: eddc3dc5308dc584cb07f2785a6be24b, type: 3}
       propertyPath: m_Name
       value: XR Interaction Setup
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562214725511569207, guid: eddc3dc5308dc584cb07f2785a6be24b, type: 3}
+      propertyPath: field of view
+      value: 99.99999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858246134658086737, guid: eddc3dc5308dc584cb07f2785a6be24b, type: 3}
+      propertyPath: m_LineType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858246134658086737, guid: eddc3dc5308dc584cb07f2785a6be24b, type: 3}
+      propertyPath: m_HitClosestOnly
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858246134658086737, guid: eddc3dc5308dc584cb07f2785a6be24b, type: 3}
+      propertyPath: m_HitDetectionType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858246134658086737, guid: eddc3dc5308dc584cb07f2785a6be24b, type: 3}
+      propertyPath: m_RaycastTriggerInteraction
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8877264067237624913, guid: eddc3dc5308dc584cb07f2785a6be24b, type: 3}
       propertyPath: m_RootOrder
@@ -57,3 +89,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eddc3dc5308dc584cb07f2785a6be24b, type: 3}
+--- !u!114 &4088171026558049337 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8858246134658086737, guid: eddc3dc5308dc584cb07f2785a6be24b, type: 3}
+  m_PrefabInstance: {fileID: 4779117511659285352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
