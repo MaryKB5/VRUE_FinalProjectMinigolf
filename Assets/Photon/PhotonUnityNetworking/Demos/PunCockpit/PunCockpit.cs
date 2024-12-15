@@ -29,7 +29,7 @@ namespace Photon.Pun.Demo.Cockpit
         public static bool Embedded;
         public static string EmbeddedGameTitle = "";
 
-		public bool debug = false;
+		public bool debug = true;
 
         public string UserId { get; set; }
 
@@ -425,6 +425,8 @@ namespace Photon.Pun.Demo.Cockpit
 		{
 			if (debug) Debug.Log("PunCockpit:LoadLevel(" +level+")");
 			PhotonNetwork.LoadLevel(level);
+
+            
 		}
 
         public void SetRoomCustomProperty(string value)
@@ -692,7 +694,7 @@ namespace Photon.Pun.Demo.Cockpit
             this.AdvancedConnectionPanel.gameObject.SetActive(false);
             this.LobbyPanel.gameObject.SetActive(true);
             this.RoomListManager.OnJoinedLobbyCallBack();
-            this.FriendListManager.SetFriendDetails(this.FriendsList);
+          //  this.FriendListManager.SetFriendDetails(this.FriendsList);
 
             JoinLobbyButton.interactable = !PhotonNetwork.InLobby && !PhotonNetwork.OfflineMode;
 

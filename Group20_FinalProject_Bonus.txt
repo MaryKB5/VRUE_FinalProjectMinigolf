@@ -1,0 +1,20 @@
+Bonustasks:
+
+Interaction:
+Implemented two-handed interaction for enhanced gameplay realism. Players can use both hands to control the golfclubs. (1 point)
+
+Effects:
+Designed realistic physics-based ball movement and collision mechanics, making interactions with the course feel natural and immersive. (1 point)
+
+Communication:
+Developed an emoji chat system for players to communicate visually during the game. (1 point)
+
+Teleportation:
+Integrated a teleportation system for players to move seamlessly between the four mini-golf courses. (0.5 points)
+
+Haptics:
+Added haptic feedback for interactions such as hitting the ball, creating a more tactile experience. (0.5 points)
+
+Sound Effects:
+Included sound effects for key interactions, such as the ball falling into the hole, to enhance immersion. (0.5 points)
+Total Bonus Points: 4.5

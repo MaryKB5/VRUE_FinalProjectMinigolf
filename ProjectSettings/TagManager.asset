@@ -8,6 +8,8 @@ TagManager:
   - Hole
   - Player1GolfClub
   - Player2GolfClub
+  - PhotonManager
+  - Lobby
   layers:
   - Default
   - TransparentFX

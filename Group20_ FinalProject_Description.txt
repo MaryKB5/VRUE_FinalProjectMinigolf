@@ -1,0 +1,33 @@
+Goals:
+Our project is a VR mini-golf game that provides a fun and social experience in a nice outdoor environment. The goal is to make the gameplay easy to learn and enjoyable, with smooth interactions and a polished look.
+Interaction:
+Players use their VR controllers to grab the golf club and hit the ball, just like in real mini-golf. Teleportation is used to move between the courses.The game keeps track of how many tries each player needs and resets the ball after a hole is completed.
+
+Implemented Features:
+Courses:
+We designed and built all mini-golf courses ourselves with different materials.
+The courses are outdoors with plants and hills, under an open sky.
+
+Models:
+The golf club and ball are external models we downloaded.
+Plants are external from assets.
+
+Interaction:
+We created all interaction mechanics ourselves.
+Players can pick up the club and swing it to hit the ball.
+The ball reacts to physics, making it feel realistic.
+
+Lobby System:
+We made a lobby where players can join and get ready for the game.
+
+Gameplay Logic:
+The game tracks the number of attempts each player makes on every course. When a ball falls into a hole, a new ball spawns at the course's starting point. Player 1 always plays the course first and uses the blue golf club, followed by Player 2. Attempts are counted separately for each course. The courses must be played in the correct order, from 1 to 4.
+
+Networking:
+The game supports multiplayer functionality, allowing two players to join a session. Additionally, non-playing "ghost" players can join as observers to watch the game in real time.
+
+Extra Features:
+Players can teleport between courses.
+There are sound effects and vibrations for actions like hitting the ball or scoring.
+Players can use one emoji to communicate.
+The results are displayed at the end of all four courses.
