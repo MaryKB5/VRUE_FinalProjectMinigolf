@@ -16,13 +16,13 @@ public class OriginDeactivator : MonoBehaviourPun
             XROrigin xROrigin = GetComponent<XROrigin>();
             Destroy(xROrigin);
 
-            GameObject mainCamera = transform.Find("Main Camera").gameObject;
-            Debug.Log("MainCamera: " + mainCamera);
-            Destroy(mainCamera.GetComponent<Camera>());
-            Destroy(mainCamera.GetComponent<AudioListener>());
-            Destroy(mainCamera.GetComponent<TrackedPoseDriver>());
+            //GameObject mainCamera = transform.Find("Main Camera").gameObject;
+            //Debug.Log("MainCamera: " + mainCamera);
+            //Destroy(mainCamera.GetComponent<Camera>());
+            //Destroy(mainCamera.GetComponent<AudioListener>());
+            //Destroy(mainCamera.GetComponent<TrackedPoseDriver>());
 
-            GameObject.Destroy(transform.Find("Locomotion System").gameObject);            
+                   
             Transform leftController = transform.Find("Left Controller");
             Debug.Log("LeftController " + leftController);
             destroyInteractors(leftController);
