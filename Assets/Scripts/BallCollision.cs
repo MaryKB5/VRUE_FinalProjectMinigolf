@@ -9,7 +9,11 @@ public class BallCollision : MonoBehaviour
     public float hapticIntensity = 0.01f;
     public float hapticDuration = 0.01f;
 
-    public ScoreManager scoreManager;
+    private ScoreManager scoreManager;
+
+    void Start() {
+        scoreManager = GameObject.FindAnyObjectByType<ScoreManager>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

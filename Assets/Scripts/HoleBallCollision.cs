@@ -8,9 +8,15 @@ public class HoleBallCollision : MonoBehaviour
 
     public GameObject startPosition;
 
-    public ScoreManager scoreManager;
+    private ScoreManager scoreManager;
+
+
 
     private bool firstBallInHole = false;
+
+    void Start() {
+        scoreManager = GameObject.FindAnyObjectByType<ScoreManager>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
