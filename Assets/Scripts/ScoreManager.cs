@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -11,8 +12,18 @@ public class ScoreManager : MonoBehaviour
     public List<int> attemptsPlayerOneList = new List<int> { 0, 0, 0, 0 };
     public List<int> attemptsPlayerTwoList = new List<int> { 0, 0, 0, 0 };
 
+    public TextMeshProUGUI playerOneResultText; 
+    public TextMeshProUGUI playerTwoResultText;
+
+    public GameObject resultsCanvas;
+
     private int currentHole = 0;
 
+
+    void Start()
+    {
+        resultsCanvas.SetActive(false);
+    }
     public void IncreaseAttemptsPlayerOne()
     {
         attemptsPlayerOne++;
@@ -48,6 +59,11 @@ public class ScoreManager : MonoBehaviour
     {
         currentHole++;
         Debug.Log("currentHole: " + currentHole);
+
+        if(currentHole == 4)
+        {
+            DisplayResults();
+        }
     }
 
     public void ResetAttemptsPlayerOne()
@@ -59,4 +75,36 @@ public class ScoreManager : MonoBehaviour
     {
         attemptsPlayerTwo = 0;
     }
+
+    public int GetResultPlayerOne()
+    {
+        int resultOne = 0;
+        foreach (int attempts in attemptsPlayerOneList)
+        {
+            resultOne += attempts;
+        }
+        return resultOne;
+    }
+
+    public int GetResultPlayerTwo()
+    {
+        int resultTwo = 0;
+        foreach (int attempts in attemptsPlayerTwoList)
+        {
+            resultTwo += attempts;
+        }
+        return resultTwo;
+    }
+
+    private void DisplayResults()
+    {
+        int playerOneScore = GetResultPlayerOne();
+        int playerTwoScore = GetResultPlayerTwo();
+
+        playerOneResultText.text = playerOneScore.ToString();
+        playerTwoResultText.text = playerTwoScore.ToString();
+
+        resultsCanvas.SetActive(true);
+    }
+
 }
