@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 255562800}
   - component: {fileID: 8235773157363923820}
   - component: {fileID: 7446441718136772939}
+  - component: {fileID: 1982581192181353684}
   m_Layer: 0
   m_Name: Golf Club
   m_TagString: Untagged
@@ -429,7 +430,6 @@ MonoBehaviour:
   rightController: {fileID: 0}
   hapticIntensity: 0.01
   hapticDuration: 0.01
-  scoreManager: {fileID: 0}
 --- !u!114 &7446441718136772939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,3 +452,15 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &1982581192181353684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8917826355607699703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7bccf9c5c70a954994dcdf848e914c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
