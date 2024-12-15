@@ -83,22 +83,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1820436699182945319, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
   m_PrefabInstance: {fileID: 1156150292962628598}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7123335890506245611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668790148420470737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!114 &798833272620094306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,18 +99,13 @@ MonoBehaviour:
   directInteractor: {fileID: 6560877155403166275}
   rayInteractor: {fileID: 8494205445174124935}
   teleportInteractor: {fileID: 668790149517437914}
---- !u!1 &668790148898735918 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1820436697614357720, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
-  m_PrefabInstance: {fileID: 1156150292962628598}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6457416461302592139
+--- !u!114 &7123335890506245611
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668790148898735918}
+  m_GameObject: {fileID: 668790148420470737}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
@@ -136,6 +115,11 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!1 &668790148898735918 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1820436697614357720, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 1156150292962628598}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &493714921384444814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +136,22 @@ MonoBehaviour:
   directInteractor: {fileID: 2963764723794084790}
   rayInteractor: {fileID: 8527330232125226252}
   teleportInteractor: {fileID: 2933920831556358083}
+--- !u!114 &6457416461302592139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668790148898735918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &668790149004978095 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1820436697519273049, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
