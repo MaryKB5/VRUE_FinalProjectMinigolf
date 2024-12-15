@@ -1,8 +1,9 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using Photon.Pun;
 
-public class UIManager : MonoBehaviour
+public class UIManager : MonoBehaviourPun
 {
     public List<TextMeshProUGUI> player1Texts;
     public List<TextMeshProUGUI> player2Texts; 
@@ -11,7 +12,22 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        scoreManager = GameObject.FindAnyObjectByType<ScoreManager>();
+        Debug.Log(scoreManager);
         UpdateUI();
+    }
+
+    private float nextActionTime = 0.0f;
+    private float period = 0.2f;
+
+
+
+    void Update() {
+        if (Time.time > nextActionTime ) {
+            nextActionTime += period;
+        
+            this.UpdateUI();
+        }
     }
 
     public void UpdateUI()
