@@ -18,12 +18,13 @@ public class GameStarter : MonoBehaviour
     public void OnGameStart()
     {
         Debug.Log("OnGameStart");
-        GameObject gameEnvironment = GameObject.Find("Game Environment");
         
+        
+        
+        SceneManager.LoadScene("Game");
+        SceneManager.UnloadSceneAsync("Lobby");
 
-        //SceneManager.UnloadSceneAsync("Lobby");
-
-
+/*
         if (gameEnvironment != null) {
             Debug.Log("Activating Game Environment");
             gameEnvironment.SetActive(true);
@@ -41,6 +42,7 @@ public class GameStarter : MonoBehaviour
         Debug.Log(canvas);
         GameObject.Destroy(canvas);
         GameObject.Destroy(lobbyPlane);
+        */
         
     }
 
