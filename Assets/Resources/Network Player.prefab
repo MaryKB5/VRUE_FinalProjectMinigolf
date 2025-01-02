@@ -69,7 +69,10 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 6854305867762057354}
+  - {fileID: 7464261575474918461}
+  - {fileID: 2335732038678411902}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -369,12 +372,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3771467792441770134, guid: 8b19fc62652693c4aba574421a9fdf6e, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3771467792441770134, guid: 8b19fc62652693c4aba574421a9fdf6e, type: 3}
+      propertyPath: ObservedComponents.Array.data[0]
+      value: 
+      objectReference: {fileID: 8568318261697759325}
     - target: {fileID: 4283425761326543017, guid: 8b19fc62652693c4aba574421a9fdf6e, type: 3}
       propertyPath: m_Name
       value: XR Controller Right Pun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b19fc62652693c4aba574421a9fdf6e, type: 3}
+--- !u!114 &8568318261697759325 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4255896643185392301, guid: 8b19fc62652693c4aba574421a9fdf6e, type: 3}
+  m_PrefabInstance: {fileID: 5613512073161700080}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &9069452334752012515 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3475118261464492563, guid: 8b19fc62652693c4aba574421a9fdf6e, type: 3}
@@ -435,6 +457,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Controller Left Pun
       objectReference: {fileID: 0}
+    - target: {fileID: 8836896895911251797, guid: f80f06d1c0ac75e4d9a6161ca793d55a, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836896895911251797, guid: f80f06d1c0ac75e4d9a6161ca793d55a, type: 3}
+      propertyPath: ObservedComponents.Array.data[0]
+      value: 
+      objectReference: {fileID: 5159851917094328448}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f80f06d1c0ac75e4d9a6161ca793d55a, type: 3}
 --- !u!4 &2879104288776545866 stripped
@@ -442,3 +472,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8270855663187062767, guid: f80f06d1c0ac75e4d9a6161ca793d55a, type: 3}
   m_PrefabInstance: {fileID: 6139349119352605093}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5159851917094328448 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1344360240465318181, guid: f80f06d1c0ac75e4d9a6161ca793d55a, type: 3}
+  m_PrefabInstance: {fileID: 6139349119352605093}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

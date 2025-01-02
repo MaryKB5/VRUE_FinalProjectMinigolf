@@ -26,7 +26,7 @@ namespace Photon.Pun.UtilityScripts
     /// <summary>
     /// This component will instantiate a network GameObject when a room is joined
     /// </summary>
-    public class OnStartInstantiate : MonoBehaviour, IMatchmakingCallbacks
+    public class OnStartInstantiate : MonoBehaviourPunCallbacks
     {
         public enum SpawnSequence { Connection, Random, RoundRobin }
 
@@ -158,28 +158,45 @@ namespace Photon.Pun.UtilityScripts
 #endif
 
 
-        public virtual void OnEnable()
+        public override void OnEnable()
         {
             PhotonNetwork.AddCallbackTarget(this);
         }
 
-        public virtual void OnDisable()
+        public override void OnDisable()
         {
             PhotonNetwork.RemoveCallbackTarget(this);
         }
 
+        List<int> playerList = new List<int>();
+
         void Start() {
-            
+            Debug.Log("Start");
+
+            //SpawnPlayers();
+            SpawnObjects();
         }
 
-         public virtual void OnJoinedRoom()
+        void SpawnPlayers() {
+            Player[] players = PhotonNetwork.PlayerList;
+
+            foreach (Player player in players) {
+                int playerNumber = player.ActorNumber;
+                if (playerNumber >= 0 && !playerList.Contains(playerNumber)) {
+                    Debug.Log("Spawning player " + playerNumber);
+                    playerList.Add(playerNumber);
+                    SpawnObjects();
+                }
+            }
+        }
+
+        
+
+         public override void OnJoinedRoom()
         {
             Debug.Log("OnJoinedRoom");
-            // Only AutoSpawn if we are a new ActorId. Rejoining should reproduce the objects by server instantiation.
-            if (AutoSpawnObjects && !PhotonNetwork.LocalPlayer.HasRejoined)
-            {
-                SpawnObjects();
-            }
+            //SpawnPlayers();
+            SpawnObjects();
         }
 
         public virtual void SpawnObjects()
@@ -259,13 +276,25 @@ namespace Photon.Pun.UtilityScripts
         }
 
         
-        public virtual void OnFriendListUpdate(List<FriendInfo> friendList) { }
-        public virtual void OnCreatedRoom() { }
-        public virtual void OnCreateRoomFailed(short returnCode, string message) { }
-        public virtual void OnJoinRoomFailed(short returnCode, string message) { }
-        public virtual void OnJoinRandomFailed(short returnCode, string message) { }
-        public virtual void OnLeftRoom() { }
+        public override void OnFriendListUpdate(List<FriendInfo> friendList) { }
+        public override void OnCreatedRoom() { }
+        public override void OnCreateRoomFailed(short returnCode, string message) { }
+        public override void OnJoinRoomFailed(short returnCode, string message) { }
+        public override void OnJoinRandomFailed(short returnCode, string message) { }
+        public override void OnLeftRoom() {}
         
+        public override void OnPlayerEnteredRoom(Player newPlayer)
+        {
+            Debug.Log("A new player joined the room");
+            base.OnPlayerEnteredRoom(newPlayer);
+
+            if (newPlayer.GetPlayerNumber() >= 0 && !playerList.Contains(newPlayer.GetPlayerNumber())) {
+                playerList.Add(newPlayer.GetPlayerNumber());
+                SpawnObjects();
+            }
+        
+        }
+
 
         /// <summary>
         /// Get the transform of the next SpawnPoint from the list, selected using the SpawnSequence setting. 

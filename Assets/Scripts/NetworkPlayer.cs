@@ -23,7 +23,7 @@ public class NetworkPlayer : MonoBehaviourPun
             leftHand.gameObject.SetActive(false);
             head.gameObject.SetActive(false);
 
-            Debug.Log("Mapping position for player no. " + photonView.Owner.GetPlayerNumber());
+//            Debug.Log("Mapping position for player no. " + photonView.Owner.GetPlayerNumber());
 
             MapPosition(head, XRNode.Head);
             MapPosition(leftHand, XRNode.LeftHand);
