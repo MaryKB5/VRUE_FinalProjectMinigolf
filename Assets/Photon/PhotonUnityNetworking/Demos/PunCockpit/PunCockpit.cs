@@ -653,6 +653,8 @@ namespace Photon.Pun.Demo.Cockpit
 
             this.ConnectingLabel.SetActive(false);
 
+            PhotonNetwork.AutomaticallySyncScene = true;
+
             this.UserIdText.text = "UserId:" + this.UserId + " Nickname:" + PhotonNetwork.NickName;
         }
 
@@ -676,7 +678,7 @@ namespace Photon.Pun.Demo.Cockpit
 
 
             this.StateText.text = "Connected to Master" + (PhotonNetwork.OfflineMode ? " <Color=Red><b>Offline</b></color>" : "");
-
+            
             this.SetUpLobbyGenericUI();
         }
 
@@ -726,6 +728,7 @@ namespace Photon.Pun.Demo.Cockpit
         public override void OnCreateRoomFailed(short returnCode, string message)
         {
 			if (debug)  Debug.Log("PunCockpit:OnCreateRoomFailed(" + returnCode + "," + message + ")");
+            Disconnect();
         }
 
         public override void OnJoinRandomFailed(short returnCode, string message)
@@ -739,7 +742,7 @@ namespace Photon.Pun.Demo.Cockpit
             this.StateText.text = "Connected to GameServer " + (PhotonNetwork.OfflineMode ? " <Color=Red><b>Offline</b></color>" : "");
 
 
-			if (debug)  Debug.Log("PunCockpit:OnJoinedRoom()");
+			if (debug)  Debug.Log("PunCockpit:OnJoinedRoom(): AutomaticallySyncScene " + PhotonNetwork.AutomaticallySyncScene);
 
             this.ConnectingLabel.gameObject.SetActive(false);
 

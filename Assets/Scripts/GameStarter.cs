@@ -6,7 +6,7 @@ using Photon.Pun.UtilityScripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameStarter : MonoBehaviour
+public class GameStarter : MonoBehaviourPun
 {
     public GameObject originalXRInteractionSetup;
 
@@ -19,10 +19,7 @@ public class GameStarter : MonoBehaviour
     {
         Debug.Log("OnGameStart");
         
-        
-        
-        SceneManager.LoadScene("Game");
-        SceneManager.UnloadSceneAsync("Lobby");
+        PhotonNetwork.LoadLevel("Game");        
 
 /*
         if (gameEnvironment != null) {

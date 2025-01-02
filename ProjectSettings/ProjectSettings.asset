@@ -137,8 +137,10 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.1
-  preloadedAssets: []
+  bundleVersion: 0.2
+  preloadedAssets:
+  - {fileID: 4116239938381803946, guid: c10b708bc289a7a4c85884288e317b24, type: 2}
+  - {fileID: 7418865794451640300, guid: 25825e9a3ddd2e84e9d933c11e96c975, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -166,7 +168,7 @@ PlayerSettings:
     tvOS: 0
   overrideDefaultApplicationIdentifier: 0
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 22
+  AndroidMinSdkVersion: 30
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -830,7 +832,7 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 2
+  activeInputHandler: 1
   windowsGamepadBackendHint: 0
   cloudProjectId: 20543418-1bfa-4e2e-abd6-9fdc000e6eea
   framebufferDepthMemorylessMode: 0

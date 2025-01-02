@@ -26,7 +26,7 @@ namespace Photon.Pun.UtilityScripts
     /// <summary>
     /// This component will instantiate a network GameObject when a room is joined
     /// </summary>
-    public class OnStartInstantiate : MonoBehaviour
+    public class OnStartInstantiate : MonoBehaviour, IMatchmakingCallbacks
     {
         public enum SpawnSequence { Connection, Random, RoundRobin }
 
@@ -169,11 +169,12 @@ namespace Photon.Pun.UtilityScripts
         }
 
         void Start() {
-            OnGameStart();
+            
         }
 
-        public virtual void OnGameStart()
+         public virtual void OnJoinedRoom()
         {
+            Debug.Log("OnJoinedRoom");
             // Only AutoSpawn if we are a new ActorId. Rejoining should reproduce the objects by server instantiation.
             if (AutoSpawnObjects && !PhotonNetwork.LocalPlayer.HasRejoined)
             {
@@ -183,6 +184,7 @@ namespace Photon.Pun.UtilityScripts
 
         public virtual void SpawnObjects()
         {
+            Debug.Log("SpawnObjects");
             if (this.PrefabsToInstantiate != null)
             {
                 foreach (GameObject o in this.PrefabsToInstantiate)
@@ -194,9 +196,6 @@ namespace Photon.Pun.UtilityScripts
 #endif
                     Vector3 spawnPos; Quaternion spawnRot;
                     GetSpawnPoint(out spawnPos, out spawnRot);
-
-                    
-
 
                     var newobj = PhotonNetwork.Instantiate(o.name, spawnPos, spawnRot, 0);
 
@@ -258,6 +257,14 @@ namespace Photon.Pun.UtilityScripts
                 spawnPos += GetRandomOffset();
             }
         }
+
+        
+        public virtual void OnFriendListUpdate(List<FriendInfo> friendList) { }
+        public virtual void OnCreatedRoom() { }
+        public virtual void OnCreateRoomFailed(short returnCode, string message) { }
+        public virtual void OnJoinRoomFailed(short returnCode, string message) { }
+        public virtual void OnJoinRandomFailed(short returnCode, string message) { }
+        public virtual void OnLeftRoom() { }
         
 
         /// <summary>

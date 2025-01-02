@@ -67400,7 +67400,6 @@ GameObject:
   - component: {fileID: 1826495124}
   - component: {fileID: 1826495123}
   - component: {fileID: 1826495128}
-  - component: {fileID: 1826495129}
   m_Layer: 5
   m_Name: Join Button
   m_TagString: Untagged
@@ -67517,18 +67516,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1826495129}
-        m_TargetAssemblyTypeName: JoinGameLobbyCleaner, Assembly-CSharp
-        m_MethodName: OnStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1826495126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67579,18 +67566,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &1826495129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1826495121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 398d215115cec57429584762a1825b0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1826707209
 GameObject:
   m_ObjectHideFlags: 0
@@ -80494,5 +80469,8 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 798833272620094306, guid: 14aeeec064662c146b62e521d2bd3b14, type: 3}
+    - {fileID: 493714921384444814, guid: 14aeeec064662c146b62e521d2bd3b14, type: 3}
+    - {fileID: 8066170195769722265, guid: 14aeeec064662c146b62e521d2bd3b14, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 14aeeec064662c146b62e521d2bd3b14, type: 3}

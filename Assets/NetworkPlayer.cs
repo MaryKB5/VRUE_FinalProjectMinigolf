@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
+using Photon.Pun.UtilityScripts;
 using UnityEngine;
 using UnityEngine.XR;
 
@@ -22,6 +23,8 @@ public class NetworkPlayer : MonoBehaviourPun
             leftHand.gameObject.SetActive(false);
             head.gameObject.SetActive(false);
 
+            Debug.Log("Mapping position for player no. " + photonView.Owner.GetPlayerNumber());
+
             MapPosition(head, XRNode.Head);
             MapPosition(leftHand, XRNode.LeftHand);
             MapPosition(rightHand, XRNode.RightHand);
@@ -30,6 +33,7 @@ public class NetworkPlayer : MonoBehaviourPun
 
     void MapPosition(Transform target,XRNode node)
     {
+        
         InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 position);
         InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion rotation);
 
