@@ -217,13 +217,9 @@ namespace Photon.Pun.UtilityScripts
                     if (newobj.GetComponent<PhotonView>().IsMine) {
                         Debug.Log(newobj);
 
-                        //for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++) {
-                          //  if (PhotonNetwork.PlayerList[i].GetPlayerNumber() == PhotonNetwork.LocalPlayer.GetPlayerNumber()) {
-                        GameObject xrInteractionSetup = GameObject.Find("XR Interaction Setup Variant");
-                        xrInteractionSetup.transform.position = spawnPos;
-                        xrInteractionSetup.transform.rotation = spawnRot;
-                            //}
-                        //}
+                        GameObject xrOrigin = GameObject.Find("XR Origin (XR Rig)");
+                        xrOrigin.transform.position = spawnPos;
+                        xrOrigin.transform.rotation = spawnRot;                        
                     }
                     SpawnedObjects.Push(newobj);
                 }

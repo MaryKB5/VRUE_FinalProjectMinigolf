@@ -17,12 +17,12 @@ public class NetworkPlayer : MonoBehaviourPun
     private float emojiSpawnTime; 
 
 
-    private GameObject xrSetup;
+    private GameObject xrOrigin;
 
     // Start is called before the first frame update
     void Start() {
-        xrSetup = GameObject.Find("XR Interaction Setup Variant");
-        Debug.Log("Found XR setup: " + xrSetup);
+        xrOrigin = GameObject.Find("XR Origin (XR Rig)");
+        Debug.Log("Found XR setup: " + xrOrigin);
     }
 
     // Update is called once per frame
@@ -34,14 +34,21 @@ public class NetworkPlayer : MonoBehaviourPun
             leftHand.gameObject.SetActive(false);
             head.gameObject.SetActive(false);
 
-//            Debug.Log("Mapping position for player no. " + photonView.Owner.GetPlayerNumber());
-            gameObject.transform.position = xrSetup.transform.position;
-            gameObject.transform.rotation = xrSetup.transform.rotation;
+            //Debug.Log("Mapping position for player no. " + photonView.Owner.GetPlayerNumber());
+            
 
             MapPosition(head, XRNode.Head);
             MapPosition(leftHand, XRNode.LeftHand);
             MapPosition(rightHand, XRNode.RightHand);
+            
+            Vector3 position = xrOrigin.transform.position; 
+            
+            Debug.Log("xrOrigin position " + position);
+            gameObject.transform.position = position;
+            gameObject.transform.rotation = xrOrigin.transform.rotation;
         }
+
+        
 
         if (spawnedEmoji != null && Time.time - emojiSpawnTime > 2f)
         {
@@ -55,7 +62,9 @@ public class NetworkPlayer : MonoBehaviourPun
         
         InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 position);
         InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion rotation);
-
+        if (node == XRNode.Head) {
+            Debug.Log("head devicePosition " + position);
+        }
         target.position = position;
         target.rotation = rotation;
     }
