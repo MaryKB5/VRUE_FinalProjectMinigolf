@@ -138,9 +138,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 0.2
-  preloadedAssets:
-  - {fileID: 4116239938381803946, guid: c10b708bc289a7a4c85884288e317b24, type: 2}
-  - {fileID: 7418865794451640300, guid: 25825e9a3ddd2e84e9d933c11e96c975, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -819,7 +817,12 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -834,11 +837,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 20543418-1bfa-4e2e-abd6-9fdc000e6eea
+  cloudProjectId: 9984adb2-69c5-406b-95a3-8ecab1c01257
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Tutorial1WS24
-  organizationId: hbrument
+  projectName: Multiplayer Minigolf
+  organizationId: unity_53d0a72c172cf433954a
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

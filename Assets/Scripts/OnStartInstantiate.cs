@@ -173,7 +173,6 @@ namespace Photon.Pun.UtilityScripts
         void Start() {
             Debug.Log("Start");
 
-            //SpawnPlayers();
             SpawnObjects();
         }
 
@@ -195,7 +194,6 @@ namespace Photon.Pun.UtilityScripts
          public override void OnJoinedRoom()
         {
             Debug.Log("OnJoinedRoom");
-            //SpawnPlayers();
             SpawnObjects();
         }
 
@@ -215,9 +213,17 @@ namespace Photon.Pun.UtilityScripts
                     GetSpawnPoint(out spawnPos, out spawnRot);
 
                     var newobj = PhotonNetwork.Instantiate(o.name, spawnPos, spawnRot, 0);
-
+                    newobj.name = o.name + " " + PhotonNetwork.LocalPlayer.ActorNumber;
                     if (newobj.GetComponent<PhotonView>().IsMine) {
                         Debug.Log(newobj);
+
+                        //for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++) {
+                          //  if (PhotonNetwork.PlayerList[i].GetPlayerNumber() == PhotonNetwork.LocalPlayer.GetPlayerNumber()) {
+                        GameObject xrInteractionSetup = GameObject.Find("XR Interaction Setup Variant");
+                        xrInteractionSetup.transform.position = spawnPos;
+                        xrInteractionSetup.transform.rotation = spawnRot;
+                            //}
+                        //}
                     }
                     SpawnedObjects.Push(newobj);
                 }

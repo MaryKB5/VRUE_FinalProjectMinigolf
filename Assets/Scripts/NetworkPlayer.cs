@@ -11,8 +11,19 @@ public class NetworkPlayer : MonoBehaviourPun
     public Transform leftHand;
     public Transform rightHand;
 
+    public Vector3 emojiOffset = new Vector3(0, 0.2f, 0); 
+
+    private GameObject spawnedEmoji; 
+    private float emojiSpawnTime; 
+
+
+    private GameObject xrSetup;
+
     // Start is called before the first frame update
-    
+    void Start() {
+        xrSetup = GameObject.Find("XR Interaction Setup Variant");
+        Debug.Log("Found XR setup: " + xrSetup);
+    }
 
     // Update is called once per frame
     void Update()
@@ -24,10 +35,18 @@ public class NetworkPlayer : MonoBehaviourPun
             head.gameObject.SetActive(false);
 
 //            Debug.Log("Mapping position for player no. " + photonView.Owner.GetPlayerNumber());
+            gameObject.transform.position = xrSetup.transform.position;
+            gameObject.transform.rotation = xrSetup.transform.rotation;
 
             MapPosition(head, XRNode.Head);
             MapPosition(leftHand, XRNode.LeftHand);
             MapPosition(rightHand, XRNode.RightHand);
+        }
+
+        if (spawnedEmoji != null && Time.time - emojiSpawnTime > 2f)
+        {
+            Destroy(spawnedEmoji);
+            photonView.RPC("SyncEmojiDespawn", RpcTarget.Others);
         }
     }
 
@@ -39,5 +58,30 @@ public class NetworkPlayer : MonoBehaviourPun
 
         target.position = position;
         target.rotation = rotation;
+    }
+
+  
+    [PunRPC]
+    private void SyncEmojiSpawn(Vector3 spawnPosition)
+    {
+        if (spawnedEmoji == null)
+        {
+            Quaternion emojiRotation = rightHand.transform.rotation * Quaternion.Euler(-60, 0, 0);
+
+            Vector3 spawnPositionHand = rightHand.transform.position + emojiOffset;
+
+            spawnedEmoji = PhotonNetwork.Instantiate("star_eyes_smile_face Variant", spawnPositionHand, emojiRotation);
+            spawnedEmoji.transform.SetParent(rightHand.transform);
+            emojiSpawnTime = Time.time;
+        }
+    }
+
+    [PunRPC]
+    private void SyncEmojiDespawn()
+    {
+        if (spawnedEmoji != null)
+        {
+            PhotonNetwork.Destroy(spawnedEmoji);
+        }
     }
 }

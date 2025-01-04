@@ -79,6 +79,26 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6984865924032390060, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984865924032390060, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: ObservedComponents.Array.data[0]
+      value: 
+      objectReference: {fileID: 3253830864916475726}
+    - target: {fileID: 6984865924032390060, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: ObservedComponents.Array.data[1]
+      value: 
+      objectReference: {fileID: 1563394945990165518}
+    - target: {fileID: 6984865924032390060, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: ObservedComponents.Array.data[2]
+      value: 
+      objectReference: {fileID: 7994371348503975453}
+    - target: {fileID: 6984865924032390060, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: ObservedComponents.Array.data[3]
+      value: 
+      objectReference: {fileID: 3787982558695779647}
     - target: {fileID: 7313654230448209575, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_Name
       value: XR Interaction Setup Variant
@@ -134,6 +154,17 @@ MonoBehaviour:
   emojiPrefab: {fileID: 7390615062469393449, guid: 9094b1ff703eeb7429d40c81902420c3, type: 3}
   rightController: {fileID: 668790148898735918}
   emojiOffset: {x: 0, y: 0.2, z: 0}
+--- !u!114 &3253830864916475726 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4408062504787000504, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 1156150292962628598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2206591790480670451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3787982558695779647 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2637673976011144905, guid: 895f6f3c2d334633b5800312285058d2, type: 3}

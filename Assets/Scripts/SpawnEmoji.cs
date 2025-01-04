@@ -20,7 +20,7 @@ public class SpawnEmoji : MonoBehaviourPun
             {
                 Spawn();
 
-                photonView.RPC("SyncEmojiSpawn", RpcTarget.Others, rightController.transform.position + emojiOffset);
+                photonView.RPC("SyncEmojiSpawn", RpcTarget.Others);//, rightController.transform.position + emojiOffset);
             }
         }
 
@@ -46,7 +46,7 @@ public class SpawnEmoji : MonoBehaviourPun
     private void Spawn()
     {
          Quaternion emojiRotation = rightController.transform.rotation * Quaternion.Euler(-60, 0, 0);
-        spawnedEmoji = Instantiate(emojiPrefab, rightController.transform.position + emojiOffset, emojiRotation);
+        spawnedEmoji = PhotonNetwork.Instantiate("star_eyes_smile_face Variant", rightController.transform.position + emojiOffset, emojiRotation);
 
         spawnedEmoji.transform.SetParent(rightController.transform);
 
@@ -57,9 +57,10 @@ public class SpawnEmoji : MonoBehaviourPun
     private void SyncEmojiSpawn(Vector3 spawnPosition)
     {
         if (spawnedEmoji == null)
-        {
+        {   
+            Vector3 spawnPositionRightController = rightController.transform.position + emojiOffset;
             Quaternion emojiRotation = rightController.transform.rotation * Quaternion.Euler(-60, 0, 0);
-            spawnedEmoji = Instantiate(emojiPrefab, spawnPosition, emojiRotation);
+            spawnedEmoji = Instantiate(emojiPrefab, spawnPositionRightController, emojiRotation);
             spawnedEmoji.transform.SetParent(rightController.transform);
             emojiSpawnTime = Time.time;
         }
@@ -70,7 +71,7 @@ public class SpawnEmoji : MonoBehaviourPun
     {
         if (spawnedEmoji != null)
         {
-            Destroy(spawnedEmoji);
+            PhotonNetwork.Destroy(spawnedEmoji);
         }
     }
 }

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4528644694921809633}
   - component: {fileID: 1520879726}
   - component: {fileID: 1520879725}
-  - component: {fileID: -5272688307363010276}
   - component: {fileID: 6467254576337141564}
   m_Layer: 6
   m_Name: Golf Ball
@@ -269,29 +268,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &-5272688307363010276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4528644694921809638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 1
-  OwnershipTransfer: 1
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 6467254576337141564}
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!114 &6467254576337141564
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -51,6 +51,7 @@ MonoBehaviour:
   head: {fileID: 642462871457224411}
   leftHand: {fileID: 2542697450883754166}
   rightHand: {fileID: 7929516356875795589}
+  emojiOffset: {x: 0, y: 0.2, z: 0}
 --- !u!114 &243691794703929333
 MonoBehaviour:
   m_ObjectHideFlags: 0
