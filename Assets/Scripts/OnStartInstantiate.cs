@@ -218,8 +218,13 @@ namespace Photon.Pun.UtilityScripts
                         Debug.Log(newobj);
 
                         GameObject xrOrigin = GameObject.Find("XR Origin (XR Rig)");
+                        
                         xrOrigin.transform.position = spawnPos;
                         xrOrigin.transform.rotation = spawnRot;                        
+
+                        newobj.transform.SetParent(xrOrigin.transform);
+                        newobj.transform.localPosition = Vector3.zero;
+                        newobj.transform.localRotation = Quaternion.identity;   
                     }
                     SpawnedObjects.Push(newobj);
                 }

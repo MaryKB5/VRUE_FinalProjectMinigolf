@@ -577,7 +577,11 @@ namespace Photon.Pun
                 Debug.LogError("Error: you cannot read this stream that you are writing!");
                 return null;
             }
-
+            if (this.readData == null || this.currentItem >= this.readData.Length)
+            {
+                Debug.LogError("Error: reading " + this.currentItem + " past max length: " + (this.readData != null ? this.readData.Length : 0));
+                return null;
+            }
             object obj = this.readData[this.currentItem];
             this.currentItem++;
             return obj;
