@@ -176,21 +176,7 @@ namespace Photon.Pun.UtilityScripts
             SpawnObjects();
         }
 
-        void SpawnPlayers() {
-            Player[] players = PhotonNetwork.PlayerList;
-
-            foreach (Player player in players) {
-                int playerNumber = player.ActorNumber;
-                if (playerNumber >= 0 && !playerList.Contains(playerNumber)) {
-                    Debug.Log("Spawning player " + playerNumber);
-                    playerList.Add(playerNumber);
-                    SpawnObjects();
-                }
-            }
-        }
-
         
-
          public override void OnJoinedRoom()
         {
             Debug.Log("OnJoinedRoom");
@@ -225,6 +211,9 @@ namespace Photon.Pun.UtilityScripts
                         newobj.transform.SetParent(xrOrigin.transform);
                         newobj.transform.localPosition = Vector3.zero;
                         newobj.transform.localRotation = Quaternion.identity;   
+                    } else {
+                        newobj.transform.position = spawnPos;
+                        newobj.transform.rotation = spawnRot;    
                     }
                     SpawnedObjects.Push(newobj);
                 }
