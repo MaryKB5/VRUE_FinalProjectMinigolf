@@ -1,4 +1,8 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
+﻿// Adapted to show userid as name
+// Michael Auß e00525937
+
+// original copyright 
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="PlayerListCell.cs" company="Exit Games GmbH">
 //   Part of: Photon Unity Utilities,
 // </copyright>
@@ -88,7 +92,7 @@ namespace Photon.Pun.Demo.Cockpit
             int _index = _player.GetPlayerNumber();
             NumberText.text = "#" + _index.ToString("00"); // if this function was not called on every update, we would need to listen to the PlayerNumbering delegate
 
-            NameText.text = _player.NickName;
+            NameText.text = _player.UserId;
 
             ActiveFlag.color = _player.IsInactive ? InactiveColor : ActiveColor;
 

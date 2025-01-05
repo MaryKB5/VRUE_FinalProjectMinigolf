@@ -1,4 +1,9 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
+﻿
+// Adapted from the original file to work with TextMeshPro instead of Text components
+// Michael Auß e00525937
+
+// original copyright:
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="UserIdUiForm.cs" company="Exit Games GmbH">
 //   Part of: Pun Cockpit Demo
 // </copyright>
@@ -6,9 +11,8 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
-
+using TMPro;
 
 namespace Photon.Pun.Demo.Cockpit.Forms
 {
@@ -18,8 +22,7 @@ namespace Photon.Pun.Demo.Cockpit.Forms
     public class UserIdUiForm : MonoBehaviour
     {
         public const string UserIdPlayerPref = "PunUserId";
-
-        public InputField idInput;
+        public TMP_InputField idInputTmp;
 
         [System.Serializable]
         public class OnSubmitEvent : UnityEvent<string> { }
@@ -32,7 +35,8 @@ namespace Photon.Pun.Demo.Cockpit.Forms
             string prefsName = PlayerPrefs.GetString(UserIdUiForm.UserIdPlayerPref);
             if (!string.IsNullOrEmpty(prefsName))
             {
-                this.idInput.text = prefsName;
+             //   this.idInput.text = prefsName;
+                this.idInputTmp.text = prefsName;
             }
         }
 
@@ -48,8 +52,8 @@ namespace Photon.Pun.Demo.Cockpit.Forms
 
         public void SubmitForm()
         {
-            PlayerPrefs.SetString(UserIdUiForm.UserIdPlayerPref, idInput.text);
-            OnSubmit.Invoke(idInput.text);
+            PlayerPrefs.SetString(UserIdUiForm.UserIdPlayerPref, idInputTmp.text);
+            OnSubmit.Invoke(idInputTmp.text); 
         }
     }
 }

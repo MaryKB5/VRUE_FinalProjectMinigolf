@@ -1,4 +1,7 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
+﻿// Michael Auß e00525937
+
+// original copyright 
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="PunCockpit.cs" company="Exit Games GmbH">
 //   Part of: Pun Cockpit Demo
 // </copyright>
@@ -655,7 +658,7 @@ namespace Photon.Pun.Demo.Cockpit
 
             PhotonNetwork.AutomaticallySyncScene = true;
 
-            this.UserIdText.text = "UserId:" + this.UserId + " Nickname:" + PhotonNetwork.NickName;
+            this.UserIdText.text = "Username: " + this.UserId;
         }
 
 		public override void OnDisconnected(DisconnectCause cause)

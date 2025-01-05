@@ -1,4 +1,7 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
+﻿// Michael Auß e00525937
+
+// original copyright 
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="CreateRoomUiForm.cs" company="Exit Games GmbH">
 //   Part of: Pun Cockpit Demo
 // </copyright>
@@ -11,6 +14,7 @@ using System.Linq;
 
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.Events;
 
 using Photon.Realtime;
@@ -22,7 +26,7 @@ namespace Photon.Pun.Demo.Cockpit.Forms
     /// </summary>
     public class CreateRoomUiForm : MonoBehaviour
     {
-        public InputField RoomNameInput;
+        public TMP_InputField RoomNameInput;
         public InputField LobbyNameInput;
         public InputField ExpectedUsersInput;
         public Dropdown LobbyTypeInput;

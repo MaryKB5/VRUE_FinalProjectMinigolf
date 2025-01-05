@@ -44,10 +44,11 @@ namespace Photon.Pun.Demo.Cockpit
         {
             base.OnEnable();
 
-            ResetList();
+            
             CellPrototype.gameObject.SetActive(false);
             UpdateStatusText.text = string.Empty;
 			ContentFeedback.text = string.Empty;
+            GetRoomList();
         }
 
 
