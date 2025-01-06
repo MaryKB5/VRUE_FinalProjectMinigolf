@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using Photon.Pun;
-using Photon.Pun.UtilityScripts;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameStarter : MonoBehaviourPun
 {
@@ -14,38 +10,18 @@ public class GameStarter : MonoBehaviourPun
 
     public GameObject lobbyPlane;
 
-    // Start is called before the first frame update
     public void OnGameStart()
     {
         Debug.Log("OnGameStart");
-        
-        PhotonNetwork.LoadLevel("Game");        
-
-/*
-        if (gameEnvironment != null) {
-            Debug.Log("Activating Game Environment");
-            gameEnvironment.SetActive(true);
-        } else {
-            Debug.LogWarning("Instantiating Game Environment");
-            PhotonNetwork.Instantiate("Game Environment", Vector3.zero, Quaternion.identity);
-            gameEnvironment =  GameObject.Find("Game Environment");
-            
-            
-            
-            
-        }
-
-        GameObject.Destroy(originalXRInteractionSetup);
-        Debug.Log(canvas);
-        GameObject.Destroy(canvas);
-        GameObject.Destroy(lobbyPlane);
-        */
-        
+        PhotonNetwork.SetMasterClient(PhotonNetwork.LocalPlayer);
+        PhotonNetwork.AutomaticallySyncScene = true;
+           
+        photonView.RPC("loadGame", RpcTarget.All);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    [PunRPC]
+    private void loadGame() {
+        Debug.Log("loadGame");
+        PhotonNetwork.LoadLevel("Game");     
     }
 }

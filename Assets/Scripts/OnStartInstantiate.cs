@@ -1,5 +1,7 @@
+// Auß Michael
 // OnStartInstantiate is based upon OnJoinedInstantiate.cs
 
+// Original copyright:
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright file="OnJoinedInstantiate.cs" company="Exit Games GmbH">
 //   Part of: Photon Unity Utilities, 

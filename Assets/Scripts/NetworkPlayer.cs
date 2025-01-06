@@ -40,10 +40,10 @@ public class NetworkPlayer : MonoBehaviourPun
     void Update()
     {
         Vector3 position = xrOrigin.transform.position; 
-
+/*
         if (photonView.IsMine) {
             photonView.RPC("SyncPosition", RpcTarget.Others, transform.position, transform.rotation);
-        }
+        }*/
 
         // Debug.Log("xrOrigin position " + position);
 
@@ -66,15 +66,15 @@ public class NetworkPlayer : MonoBehaviourPun
             photonView.RPC("SyncEmojiDespawn", RpcTarget.Others);
         }
     }
-
+/*
     [PunRPC]
     private void SyncPosition(Vector3 position, Quaternion rotation) {
-        if (!photonView.IsMine) return;
+        if (photonView.IsMine) return;
         
         Debug.Log("Syncing position for player no. " + photonView.Owner.GetPlayerNumber());
         gameObject.transform.position = position;
         gameObject.transform.rotation = rotation;
-    }
+    }*/
 
     void MapPosition(Transform target,Transform rigTransform)
     {
@@ -83,6 +83,10 @@ public class NetworkPlayer : MonoBehaviourPun
         /*if (node == XRNode.Head) {
             Debug.Log("head devicePosition " + position);
         }*/
+
+        if (!photonView.IsMine) {
+            Debug.Log("head devicePosition " + rigTransform.position);
+        }
         target.position = rigTransform.position;
         target.rotation = rigTransform.rotation;
     }
