@@ -6330,22 +6330,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8765395272791275780, guid: 08549e0dc1be96143a774aad404aae5e, type: 3}
   m_PrefabInstance: {fileID: 2276455327546743077}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2371632539125213693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3915828405846867663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 0
 --- !u!4 &2408719845520650386
 Transform:
   m_ObjectHideFlags: 0
@@ -6410,11 +6394,11 @@ PrefabInstance:
     - target: {fileID: 2316951139715163026, guid: abc69590021224f438585b491e5442da, type: 3}
       propertyPath: ObservedComponents.Array.data[3]
       value: 
-      objectReference: {fileID: 2371632539125213693}
+      objectReference: {fileID: 0}
     - target: {fileID: 2316951139715163026, guid: abc69590021224f438585b491e5442da, type: 3}
       propertyPath: ObservedComponents.Array.data[4]
       value: 
-      objectReference: {fileID: 8829750488260727519}
+      objectReference: {fileID: 0}
     - target: {fileID: 2316951139715163026, guid: abc69590021224f438585b491e5442da, type: 3}
       propertyPath: ObservedComponents.Array.data[5]
       value: 
@@ -6549,11 +6533,6 @@ GameObject:
 --- !u!1 &3915828405846867662 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8144717529604032002, guid: abc69590021224f438585b491e5442da, type: 3}
-  m_PrefabInstance: {fileID: 3915828405846867660}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3915828405846867663 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8144717528941446909, guid: abc69590021224f438585b491e5442da, type: 3}
   m_PrefabInstance: {fileID: 3915828405846867660}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &3915828405846867664 stripped
@@ -7252,22 +7231,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &8829750488260727519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3915828405846867662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 0
 --- !u!1 &8922225697171844749
 GameObject:
   m_ObjectHideFlags: 0

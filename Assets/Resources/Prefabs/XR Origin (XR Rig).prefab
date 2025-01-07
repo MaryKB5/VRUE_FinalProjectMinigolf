@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3684093170625411834}
   - component: {fileID: 2826506726140772364}
   - component: {fileID: 7057655912777561158}
-  - component: {fileID: 4609975186811209447}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -99,22 +98,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4609975186811209447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811840221697778541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &3115709217906361727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,7 +1322,6 @@ GameObject:
   - component: {fileID: 8144717529423095429}
   - component: {fileID: 8144717529423095431}
   - component: {fileID: 2844288744240725345}
-  - component: {fileID: 5915209329163782367}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1515,22 +1497,6 @@ MonoBehaviour:
       m_Action: Rotation
       m_Flags: 0
     m_Flags: 0
---- !u!114 &5915209329163782367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8144717529423095427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &8144717529604032002
 GameObject:
   m_ObjectHideFlags: 0
