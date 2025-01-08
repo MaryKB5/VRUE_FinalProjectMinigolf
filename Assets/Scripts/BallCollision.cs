@@ -13,6 +13,7 @@ public class BallCollision : MonoBehaviour
 
     void Start() {
         scoreManager = GameObject.FindAnyObjectByType<ScoreManager>();
+        Debug.Log("ScoreManager: " + scoreManager);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -39,7 +40,7 @@ public class BallCollision : MonoBehaviour
 
 
             if (CompareTag("Player1GolfClub"))
-            {
+            {   
                 scoreManager.IncreaseAttemptsPlayerOne();
             }
             else if (CompareTag("Player2GolfClub"))

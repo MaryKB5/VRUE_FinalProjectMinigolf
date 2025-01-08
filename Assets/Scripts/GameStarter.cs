@@ -1,8 +1,9 @@
 
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class GameStarter : MonoBehaviourPun
+public class GameStarter : MonoBehaviourPunCallbacks
 {
     public GameObject originalXRInteractionSetup;
 
@@ -10,13 +11,23 @@ public class GameStarter : MonoBehaviourPun
 
     public GameObject lobbyPlane;
 
+    public override void OnJoinedRoom() {
+        if (PhotonNetwork.IsMasterClient) {
+            transform.Find("Text").gameObject.GetComponent<Text>().text = "Start";            
+        } else {
+            transform.Find("Text").gameObject.GetComponent<Text>().text = "Wait for master";            
+        }
+    }
+
     public void OnGameStart()
     {
         Debug.Log("OnGameStart");
-        PhotonNetwork.SetMasterClient(PhotonNetwork.LocalPlayer);
-        PhotonNetwork.AutomaticallySyncScene = true;
-           
-        photonView.RPC("loadGame", RpcTarget.All);
+        if(PhotonNetwork.IsMasterClient) {
+            PhotonNetwork.SetMasterClient(PhotonNetwork.LocalPlayer);
+            PhotonNetwork.AutomaticallySyncScene = true;
+            
+            photonView.RPC("loadGame", RpcTarget.All);
+        }
     }
 
     [PunRPC]

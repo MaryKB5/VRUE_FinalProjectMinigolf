@@ -48,13 +48,14 @@ namespace Photon.Pun.Demo.Cockpit
             CellPrototype.gameObject.SetActive(false);
             UpdateStatusText.text = string.Empty;
 			ContentFeedback.text = string.Empty;
-            GetRoomList();
+            //GetRoomList();
         }
 
 
 
         public void OnRoomCellJoinButtonClick(string roomName)
         {
+            Debug.Log("OnRoomCellJoinButtonClick");
             OnJoinRoom.Invoke(roomName);
         }
 

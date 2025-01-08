@@ -14,13 +14,6 @@ public class NetworkPlayer : MonoBehaviourPun
     private Transform headRig;
     private Transform leftHandRig;
     private Transform rightHandRig;
-
-    public Vector3 emojiOffset = new Vector3(0, 0.2f, 0); 
-/*
-    private GameObject spawnedEmoji; 
-    private float emojiSpawnTime; 
-
-*/
     private GameObject xrOrigin;
 
     // Start is called before the first frame update
@@ -58,21 +51,4 @@ public class NetworkPlayer : MonoBehaviourPun
         target.position = rigTransform.position;
         target.rotation = rigTransform.rotation;
     }
-
-  /*
-    [PunRPC]
-    private void SyncEmojiSpawn(Vector3 spawnPosition)
-    {
-        if (spawnedEmoji == null)
-        {
-            Quaternion emojiRotation = rightHand.transform.rotation * Quaternion.Euler(-60, 0, 0);
-
-            Vector3 spawnPositionHand = rightHand.transform.position + emojiOffset;
-
-            spawnedEmoji = PhotonNetwork.Instantiate("Prefabs/star_eyes_smile_face Variant", spawnPositionHand, emojiRotation);
-            spawnedEmoji.transform.SetParent(rightHand.transform);
-            emojiSpawnTime = Time.time;
-        }
-    }
-    */
 }

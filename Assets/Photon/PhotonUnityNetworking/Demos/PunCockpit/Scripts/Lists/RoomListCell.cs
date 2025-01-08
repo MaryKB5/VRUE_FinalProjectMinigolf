@@ -53,6 +53,7 @@ namespace Photon.Pun.Demo.Cockpit
 
         public void OnJoinRoomButtonClick()
         {
+            Debug.Log("OnJoinRoomButtonClick");
             ListManager.OnRoomCellJoinButtonClick(info.Name);
         }
 

@@ -2,27 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager : MonoBehaviourPun
 {
-    public UIManager uiManager;
+    private UIManager uiManager;
     private int attemptsPlayerOne = 0;
     private int attemptsPlayerTwo = 0;
 
     public List<int> attemptsPlayerOneList = new List<int> { 0, 0, 0, 0 };
     public List<int> attemptsPlayerTwoList = new List<int> { 0, 0, 0, 0 };
 
-    public TextMeshProUGUI playerOneResultText; 
-    public TextMeshProUGUI playerTwoResultText;
+    private TextMeshProUGUI playerOneResultText; 
+    private TextMeshProUGUI playerTwoResultText;
 
-    public GameObject resultsCanvas;
+    private GameObject resultsCanvas;
 
     private int currentHole = 0;
 
 
     void Start()
     {
-        resultsCanvas.SetActive(false);
+        //resultsCanvas.SetActive(false);
+        GameObject.Find("UIManager").TryGetComponent(out uiManager);
+        uiManager.scoreManager = this;
+        resultsCanvas = GameObject.Find("Results");
+        playerOneResultText = GameObject.Find("Player 1 Results").GetComponent<TextMeshProUGUI>();
+        playerTwoResultText = GameObject.Find("Player 2 Results").GetComponent<TextMeshProUGUI>();
+        Debug.Log("UIManager: " + uiManager);
+        Debug.Log("PlayerOneResultText: " + playerOneResultText);
+        Debug.Log("PlayerTwoResultText: " + playerTwoResultText);
+
     }
     public void IncreaseAttemptsPlayerOne()
     {
@@ -60,10 +70,10 @@ public class ScoreManager : MonoBehaviour
         currentHole++;
         Debug.Log("currentHole: " + currentHole);
 
-        if(currentHole == 4)
-        {
+        //if(currentHole == 4)
+        //{
             DisplayResults();
-        }
+        //}
     }
 
     public void ResetAttemptsPlayerOne()

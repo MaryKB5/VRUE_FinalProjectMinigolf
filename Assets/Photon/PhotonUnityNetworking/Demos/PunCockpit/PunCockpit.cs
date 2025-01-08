@@ -426,7 +426,7 @@ namespace Photon.Pun.Demo.Cockpit
 
 		public void LoadLevel(string level)
 		{
-			if (debug) Debug.Log("PunCockpit:LoadLevel(" +level+")");
+			Debug.Log("PunCockpit:LoadLevel(" +level+")");
 			PhotonNetwork.LoadLevel(level);
 
             
@@ -434,7 +434,7 @@ namespace Photon.Pun.Demo.Cockpit
 
         public void SetRoomCustomProperty(string value)
         {
-			if (debug) Debug.Log("PunCockpit:SetRoomCustomProperty() c0 = " + value);
+			Debug.Log("PunCockpit:SetRoomCustomProperty() c0 = " + value);
             PhotonNetwork.CurrentRoom.SetCustomProperties(new Hashtable() { { "C0", value } });
         }
 
@@ -442,11 +442,13 @@ namespace Photon.Pun.Demo.Cockpit
 
         public void JoinRoom(string roomName)
         {
+            Debug.Log("Join Room " + roomName);
             this.RoomListManager.ResetList();
             this.LobbyPanel.gameObject.SetActive(false);
             this.ConnectingLabel.SetActive(true);
             this.roomNameToEnter = roomName;
-            PhotonNetwork.JoinRoom(roomName);
+            bool result = PhotonNetwork.JoinRoom(roomName);
+            Debug.Log("Join Room " + roomName + " result: " + result);  
         }
 
         public void CreateRoom()
@@ -456,29 +458,31 @@ namespace Photon.Pun.Demo.Cockpit
 
         public void CreateRoom(string roomName, string lobbyName = "MyLobby", LobbyType lobbyType = LobbyType.SqlLobby, string[] expectedUsers = null)
         {
-			if (debug) Debug.Log("PunCockpit:CreateRoom roomName:" + roomName + " lobbyName:" + lobbyName + " lobbyType:" + lobbyType + " expectedUsers:" + (expectedUsers == null ? "null" : expectedUsers.ToStringFull()));
+			Debug.Log("PunCockpit:CreateRoom roomName:" + roomName + " lobbyName:" + lobbyName + " lobbyType:" + lobbyType + " expectedUsers:" + (expectedUsers == null ? "null" : expectedUsers.ToStringFull()));
 
             this.RoomListManager.ResetList();
             this.LobbyPanel.gameObject.SetActive(false);
             this.ConnectingLabel.SetActive(true);
 
             RoomOptions _roomOptions = this.GetRoomOptions();
-			if (debug) Debug.Log("PunCockpit:Room options  <" + _roomOptions + ">");
+			Debug.Log("PunCockpit:Room options  <" + _roomOptions + ">");
 
             TypedLobby sqlLobby = new TypedLobby(lobbyName, lobbyType);
             bool _result = PhotonNetwork.CreateRoom(roomName, _roomOptions, sqlLobby, expectedUsers);
 
-			if (debug) Debug.Log("PunCockpit:CreateRoom() -> " + _result);
+			Debug.Log("PunCockpit:CreateRoom() -> " + _result);
 
         }
 
         public void JoinRandomRoom()
         {
+            Debug.Log("Join Random Room");
             PhotonNetwork.JoinRandomRoom();
         }
 
         public void LeaveRoom()
         {
+            Debug.Log("Leave Room");
             PlayerListManager.ResetList();
             this.GamePanel.gameObject.SetActive(false);
             this.ConnectingLabel.SetActive(true);
@@ -489,6 +493,7 @@ namespace Photon.Pun.Demo.Cockpit
 
         public void Connect()
         {
+            Debug.Log("Connect");
             this.ConnectionPanel.gameObject.SetActive(false);
             this.AdvancedConnectionPanel.gameObject.SetActive(false);
 
@@ -505,6 +510,7 @@ namespace Photon.Pun.Demo.Cockpit
 
         public void ReConnect()
         {
+            Debug.Log("Reconnect");
             this.ConnectionPanel.gameObject.SetActive(false);
             this.AdvancedConnectionPanel.gameObject.SetActive(false);
 
@@ -518,6 +524,7 @@ namespace Photon.Pun.Demo.Cockpit
 
         public void ReconnectAndRejoin()
         {
+            Debug.Log("ReconnectAndRejoin");
             this.ConnectionPanel.gameObject.SetActive(false);
             this.AdvancedConnectionPanel.gameObject.SetActive(false);
 
@@ -532,7 +539,7 @@ namespace Photon.Pun.Demo.Cockpit
 
         public void ConnectToBestCloudServer()
         {
-
+            Debug.Log("ConnectToBestCloudServer");
             PhotonNetwork.NetworkingClient.AppId = PhotonNetwork.PhotonServerSettings.AppSettings.AppIdRealtime;
 
             this.ConnectionPanel.gameObject.SetActive(false);
@@ -556,7 +563,7 @@ namespace Photon.Pun.Demo.Cockpit
         public void ConnectToRegion(string region)
         {
 
-			if (debug)  Debug.Log("PunCockpit:ConnectToRegion(" + region + ")");
+			Debug.Log("PunCockpit:ConnectToRegion(" + region + ")");
 
             PhotonNetwork.NetworkingClient.AppId = PhotonNetwork.PhotonServerSettings.AppSettings.AppIdRealtime;
 
@@ -574,20 +581,20 @@ namespace Photon.Pun.Demo.Cockpit
 				PhotonNetwork.GameVersion = GameVersionOverride;
 			}
 
-			if (debug)  Debug.Log("PunCockpit:ConnectToRegion(" + region + ") ->" + _result);
+			Debug.Log("PunCockpit:ConnectToRegion(" + region + ") ->" + _result);
         }
 
 
 
         public void ConnectOffline()
         {
-			if (debug)  Debug.Log("PunCockpit:ConnectOffline()");
+			Debug.Log("PunCockpit:ConnectOffline()");
             PhotonNetwork.OfflineMode = true;
         }
 
         public void JoinLobby()
         {
-			if (debug)  Debug.Log("PunCockpit:JoinLobby()");
+			Debug.Log("PunCockpit:JoinLobby()");
 			bool _result =  PhotonNetwork.JoinLobby();
 
 			if (!_result) {
@@ -598,7 +605,7 @@ namespace Photon.Pun.Demo.Cockpit
 
         public void Disconnect()
         {
-			if (debug)  Debug.Log("PunCockpit:Disconnect()");
+			Debug.Log("PunCockpit:Disconnect()");
             PhotonNetwork.Disconnect();
         }
 
@@ -612,7 +619,7 @@ namespace Photon.Pun.Demo.Cockpit
         #region CONNECT UI
         public void OnDropdownConnectAs(int dropdownIndex)
         {
-			if (debug)  Debug.Log("PunCockpit:OnDropdownConnectAs(" + dropdownIndex + ")");
+			Debug.Log("PunCockpit:OnDropdownConnectAs(" + dropdownIndex + ")");
 
             this.UserId = this.FriendsList[dropdownIndex].UserId;
             PlayerPrefs.SetString(UserIdUiForm.UserIdPlayerPref, this.UserId);
@@ -652,18 +659,18 @@ namespace Photon.Pun.Demo.Cockpit
 
         public override void OnConnected()
         {
-			if (debug) Debug.Log("PunCockpit:OnConnected()");
+			Debug.Log("PunCockpit:OnConnected()");
 
             this.ConnectingLabel.SetActive(false);
 
-            PhotonNetwork.AutomaticallySyncScene = true;
+            //PhotonNetwork.AutomaticallySyncScene = true;
 
             this.UserIdText.text = "Username: " + this.UserId;
         }
 
 		public override void OnDisconnected(DisconnectCause cause)
         {
-			if (debug) Debug.Log("PunCockpit:OnDisconnected("+cause+")");
+			Debug.Log("PunCockpit:OnDisconnected("+cause+")");
 
             this.ConnectingLabel.SetActive(false);
             this.UserIdText.text = string.Empty;
@@ -677,7 +684,7 @@ namespace Photon.Pun.Demo.Cockpit
 
         public override void OnConnectedToMaster()
         {
-			if (debug)  Debug.Log("PunCockpit:OnConnectedToMaster()");
+			Debug.Log("PunCockpit:OnConnectedToMaster()");
 
 
             this.StateText.text = "Connected to Master" + (PhotonNetwork.OfflineMode ? " <Color=Red><b>Offline</b></color>" : "");
@@ -689,7 +696,7 @@ namespace Photon.Pun.Demo.Cockpit
         {
             this.StateText.text = "Connected to Lobby";
 
-			if (debug)  Debug.Log("PunCockpit:OnJoinedLobby()");
+			 Debug.Log("PunCockpit:OnJoinedLobby()");
             this.SetUpLobbyGenericUI();
         }
 
@@ -712,7 +719,7 @@ namespace Photon.Pun.Demo.Cockpit
 
         public override void OnRoomPropertiesUpdate(Hashtable propertiesThatChanged)
         {
-			if (debug) Debug.Log("PunCockpit:OnRoomPropertiesUpdate() " + propertiesThatChanged.ToStringFull());
+			Debug.Log("PunCockpit:OnRoomPropertiesUpdate() " + propertiesThatChanged.ToStringFull());
 
             if (propertiesThatChanged.ContainsKey("C0"))
             {
@@ -722,7 +729,7 @@ namespace Photon.Pun.Demo.Cockpit
 
         public override void OnLeftLobby()
         {
-			if (debug) Debug.Log("PunCockpit:OnLeftLobby()");
+			Debug.Log("PunCockpit:OnLeftLobby()");
 
             this.RoomListManager.ResetList();
             this.LobbyPanel.gameObject.SetActive(false);
@@ -730,13 +737,13 @@ namespace Photon.Pun.Demo.Cockpit
 
         public override void OnCreateRoomFailed(short returnCode, string message)
         {
-			if (debug)  Debug.Log("PunCockpit:OnCreateRoomFailed(" + returnCode + "," + message + ")");
+			Debug.Log("PunCockpit:OnCreateRoomFailed(" + returnCode + "," + message + ")");
             Disconnect();
         }
 
         public override void OnJoinRandomFailed(short returnCode, string message)
         {
-			if (debug)  Debug.Log("PunCockpit:OnJoinRandomFailed(" + returnCode + "," + message + ")");
+			Debug.Log("PunCockpit:OnJoinRandomFailed(" + returnCode + "," + message + ")");
         }
 
         public override void OnJoinedRoom()
@@ -745,7 +752,7 @@ namespace Photon.Pun.Demo.Cockpit
             this.StateText.text = "Connected to GameServer " + (PhotonNetwork.OfflineMode ? " <Color=Red><b>Offline</b></color>" : "");
 
 
-			if (debug)  Debug.Log("PunCockpit:OnJoinedRoom(): AutomaticallySyncScene " + PhotonNetwork.AutomaticallySyncScene);
+			Debug.Log("PunCockpit:OnJoinedRoom(): AutomaticallySyncScene " + PhotonNetwork.AutomaticallySyncScene);
 
             this.ConnectingLabel.gameObject.SetActive(false);
 
@@ -758,7 +765,8 @@ namespace Photon.Pun.Demo.Cockpit
         }
 
         public override void OnJoinRoomFailed(short returnCode, string message)
-        {
+        {  
+            Debug.Log("PunCockpit:OnJoinRoomFailed(" + returnCode + "," + message + ")");
             switch (returnCode)
             {
                 case ErrorCode.JoinFailedFoundInactiveJoiner:
@@ -768,12 +776,19 @@ namespace Photon.Pun.Demo.Cockpit
                         this.roomNameToEnter = null;
                     }
                     break;
+                case ErrorCode.JoinFailedFoundActiveJoiner:
+                    Debug.Log("JoinFailedFoundActiveJoiner");
+                    break;
+                default:
+                    this.LobbyPanel.gameObject.SetActive(true);
+                    this.ConnectingLabel.SetActive(false);
+                    break;
             }
         }
 
         public override void OnLeftRoom()
         {
-			if (debug)  Debug.Log("PunCockpit:OnLeftRoom()");
+			Debug.Log("PunCockpit:OnLeftRoom()");
             this.GamePanel.gameObject.SetActive(false);
 
 			if (PhotonNetwork.OfflineMode)

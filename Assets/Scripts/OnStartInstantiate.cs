@@ -18,6 +18,7 @@ using UnityEngine.Serialization;
 
 using Photon.Realtime;
 
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -275,11 +276,21 @@ namespace Photon.Pun.UtilityScripts
 
         
         public override void OnFriendListUpdate(List<FriendInfo> friendList) { }
-        public override void OnCreatedRoom() { }
-        public override void OnCreateRoomFailed(short returnCode, string message) { }
-        public override void OnJoinRoomFailed(short returnCode, string message) { }
-        public override void OnJoinRandomFailed(short returnCode, string message) { }
-        public override void OnLeftRoom() {}
+        public override void OnCreatedRoom() { 
+            Debug.Log("OnCreatedRoom");
+        }
+        public override void OnCreateRoomFailed(short returnCode, string message) { 
+            Debug.Log("OnJoinRoomFailed: " + returnCode + " Message: " + message);
+        }
+        public override void OnJoinRoomFailed(short returnCode, string message) {
+            Debug.Log("OnJoinRoomFailed: " + returnCode + " Message: " + message);
+        }
+        public override void OnJoinRandomFailed(short returnCode, string message) {
+            Debug.Log("OnJoinRandomFailed: " + returnCode + " Message: " + message);
+         }
+        public override void OnLeftRoom() {
+            Debug.Log("OnLeftRoom");
+        }
         
         public override void OnPlayerEnteredRoom(Player newPlayer)
         {

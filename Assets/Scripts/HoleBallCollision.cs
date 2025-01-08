@@ -15,13 +15,15 @@ public class HoleBallCollision : MonoBehaviourPun
     private bool firstBallInHole = true;
 
     void Start() {
-        scoreManager = GameObject.FindAnyObjectByType<ScoreManager>();
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ball"))
         {
+            scoreManager = GameObject.FindAnyObjectByType<ScoreManager>();
+            Debug.Log("ScoreManager: " + scoreManager);
 
             Rigidbody ballRb = other.GetComponent<Rigidbody>();
             if (ballRb != null)
