@@ -11,11 +11,11 @@ public class GolfClubCreator : MonoBehaviourPun
         if (PhotonNetwork.IsMasterClient) {
             Debug.Log("Creating golf club");
             Vector3 newPosition = transform.position + new Vector3(-7.5f, 1.0f, 0.8f);
-            GameObject club1 = PhotonNetwork.InstantiateRoomObject("Golf Club Player 1", newPosition, Quaternion.identity);
+            GameObject club1 = PhotonNetwork.InstantiateRoomObject("Prefabs/Golf Club Player 1", newPosition, Quaternion.Euler(0, 90, 0));
             club1.SetActive(true);
 
             Vector3 newPosition2 = transform.position + new Vector3(-7.5f, 1.0f, -0.8f);
-            GameObject club2 = PhotonNetwork.InstantiateRoomObject("Golf Club", newPosition2, Quaternion.identity);
+            GameObject club2 = PhotonNetwork.InstantiateRoomObject("Prefabs/Golf Club", newPosition2, Quaternion.Euler(0, 90, 0));
             club2.SetActive(true);
 
         } else {

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2212119097539348706}
   - component: {fileID: 243691794703929333}
   - component: {fileID: 2558953739867987063}
+  - component: {fileID: 7683227222462757473}
   m_Layer: 0
   m_Name: Network Player
   m_TagString: Untagged
@@ -95,6 +96,19 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 0
+--- !u!114 &7683227222462757473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336322900726738677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f0b5c6f2ce1c814a99f872b479dcea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emojiOffset: {x: 0, y: 0.2, z: 0}
 --- !u!1 &918219665784489098
 GameObject:
   m_ObjectHideFlags: 0

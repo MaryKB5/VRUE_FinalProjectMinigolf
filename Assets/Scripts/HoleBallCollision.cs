@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
-public class HoleBallCollision : MonoBehaviour
+public class HoleBallCollision : MonoBehaviourPun
 {
-    public GameObject ballPrefab;
-
+    
     public GameObject startPosition;
 
     private ScoreManager scoreManager;
 
 
 
-    private bool firstBallInHole = false;
+    private bool firstBallInHole = true;
 
     void Start() {
         scoreManager = GameObject.FindAnyObjectByType<ScoreManager>();
@@ -40,21 +40,23 @@ public class HoleBallCollision : MonoBehaviour
 
                 if (startPosition != null)
                 {
-                    
-                    Instantiate(ballPrefab, startPosition.transform.position, Quaternion.identity);
+                    if (PhotonNetwork.IsMasterClient) {
+                        PhotonNetwork.Instantiate("Prefabs/Golf Ball", startPosition.transform.position, Quaternion.identity);
+                    }
                 }
 
                 if (firstBallInHole)
                 {
-                    scoreManager.SaveAttemptsToListPlayerTwo();
-                    scoreManager.NextHole();
-                    scoreManager.ResetAttemptsPlayerTwo();
+                    scoreManager.SaveAttemptsToListPlayerOne();
+                    scoreManager.ResetAttemptsPlayerOne();
                     firstBallInHole = false;
                 }
                 else
                 {
-                    scoreManager.SaveAttemptsToListPlayerOne();
-                    scoreManager.ResetAttemptsPlayerOne();
+                    scoreManager.SaveAttemptsToListPlayerTwo();
+                    scoreManager.NextHole();
+                    scoreManager.ResetAttemptsPlayerTwo();
+                    
                     firstBallInHole = true;
                 }
             }

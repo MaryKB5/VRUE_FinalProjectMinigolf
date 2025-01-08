@@ -16,7 +16,8 @@ public class BallCollision : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision)
-    {
+    {  
+        Debug.Log("Collision detected between " + collision.gameObject.name + " and " + gameObject.name);
 
         if (collision.gameObject.CompareTag("Ball"))
         {

@@ -283,7 +283,7 @@ PrefabInstance:
     - target: {fileID: 2316951139715163026, guid: abc69590021224f438585b491e5442da, type: 3}
       propertyPath: ObservedComponents.Array.data[5]
       value: 
-      objectReference: {fileID: 1580656779767988053}
+      objectReference: {fileID: 0}
     - target: {fileID: 2513576312158675494, guid: abc69590021224f438585b491e5442da, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -379,17 +379,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3411280221254256456, guid: abc69590021224f438585b491e5442da, type: 3}
   m_PrefabInstance: {fileID: 3032737802465671602}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1580656779767988053 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4609975186811209447, guid: abc69590021224f438585b491e5442da, type: 3}
-  m_PrefabInstance: {fileID: 3032737802465671602}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &5532334679441016430 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7408632367737569244, guid: abc69590021224f438585b491e5442da, type: 3}

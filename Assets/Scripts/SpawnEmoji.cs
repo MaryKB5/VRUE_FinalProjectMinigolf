@@ -1,33 +1,43 @@
 using UnityEngine;
 using UnityEngine.XR;
 using Photon.Pun;
+using Unity.Mathematics;
 
 public class SpawnEmoji : MonoBehaviourPun
 {
-    public GameObject emojiPrefab; 
-    public GameObject rightController; 
+    private GameObject rightController; 
     public Vector3 emojiOffset = new Vector3(0, 0.2f, 0); 
 
     private GameObject spawnedEmoji; 
     private float emojiSpawnTime; 
 
+
+    void Start() {
+        if (photonView.IsMine) {
+            GameObject xrOrigin = GameObject.Find("XR Origin (XR Rig)");
+            Debug.Log("SpawnEmoji: Found XR setup: " + xrOrigin);
+
+            rightController = xrOrigin.transform.Find("Camera Offset/Right Controller").gameObject;
+            Debug.Log("SpawnEmoji: Found rightController: " + rightController);
+        }
+    }
     void Update()
     {
-       
-        if (IsRightTriggerPressed())
-        {
-            if (spawnedEmoji == null)
+        if (photonView.IsMine) {
+            if (IsRightTriggerPressed())
             {
-                Spawn();
+                if (spawnedEmoji == null)
+                {
+                    Spawn();
 
-                photonView.RPC("SyncEmojiSpawn", RpcTarget.Others);//, rightController.transform.position + emojiOffset);
+                    photonView.RPC("SyncEmojiSpawn", RpcTarget.Others);
+                }
             }
-        }
 
-        if (spawnedEmoji != null && Time.time - emojiSpawnTime > 2f)
-        {
-            Destroy(spawnedEmoji);
-            photonView.RPC("SyncEmojiDespawn", RpcTarget.Others);
+            if (spawnedEmoji != null && Time.time - emojiSpawnTime > 2f)
+            {
+                spawnedEmoji = null;
+            }
         }
     }
 
@@ -45,8 +55,8 @@ public class SpawnEmoji : MonoBehaviourPun
 
     private void Spawn()
     {
-         Quaternion emojiRotation = rightController.transform.rotation * Quaternion.Euler(-60, 0, 0);
-        spawnedEmoji = PhotonNetwork.Instantiate("star_eyes_smile_face Variant", rightController.transform.position + emojiOffset, emojiRotation);
+        Quaternion emojiRotation = rightController.transform.rotation * Quaternion.Euler(-60, 0, 0);
+        spawnedEmoji = PhotonNetwork.Instantiate("Prefabs/star_eyes_smile_face Variant", rightController.transform.position + emojiOffset, emojiRotation);
 
         spawnedEmoji.transform.SetParent(rightController.transform);
 
@@ -60,18 +70,9 @@ public class SpawnEmoji : MonoBehaviourPun
         {   
             Vector3 spawnPositionRightController = rightController.transform.position + emojiOffset;
             Quaternion emojiRotation = rightController.transform.rotation * Quaternion.Euler(-60, 0, 0);
-            spawnedEmoji = Instantiate(emojiPrefab, spawnPositionRightController, emojiRotation);
+            spawnedEmoji = PhotonNetwork.Instantiate("Prefabs/star_eyes_smile_face Variant", spawnPositionRightController, emojiRotation);
             spawnedEmoji.transform.SetParent(rightController.transform);
             emojiSpawnTime = Time.time;
-        }
-    }
-
-    [PunRPC]
-    private void SyncEmojiDespawn()
-    {
-        if (spawnedEmoji != null)
-        {
-            PhotonNetwork.Destroy(spawnedEmoji);
         }
     }
 }
